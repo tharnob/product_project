@@ -48,9 +48,9 @@ class ProductController extends Controller
         // ]);
 
         $product = new Product();
-        $product->name             = $request->name;
-        $product->quantity             = $request->quantity;
-        $product->price             = $request->price;
+        $product->name = $request->name;
+        $product->quantity  = $request->quantity;
+        $product->price  = $request->price;
 
         $product->save();
         return redirect()->back()->with("message", "Product Added Successfully");
@@ -75,6 +75,10 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
+
+
+
+
         $product = Product::find($id);
         if (!is_null($product)) {
             return view('edit', compact('product'));
